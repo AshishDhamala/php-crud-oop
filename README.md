@@ -19,4 +19,4 @@ password: blueocean
 After login, you can access the admin page.
 
 ## Public section
-To access public section, go to the public url (localhost/Ashish/pyblic/index.php).
+To access public section, go to the public url (localhost/Ashish/public/index.php).
