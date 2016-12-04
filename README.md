@@ -3,6 +3,7 @@ In this project, we can add, update and delete posts. It has full admin login sy
 
 ## Things to do
 Before running this porject on your browser, you need to do these things:
+
 1. Upload oop.sql file to your database. In my case I have used xampp software. It has apache server and mysqli database.
 2. Clone this project inside the htdocs folder(in case of xampp). Or you can clone it whereever you want to host it.
 3. Start Apache and Mysql using the xampp software.
