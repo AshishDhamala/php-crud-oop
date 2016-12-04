@@ -1,0 +1,195 @@
+/*
+  $animationName           = Should be given by ourselves.
+  $animationDuration       = Duration during which animation takes place. E.g. 1s, 2s, 3s, etc.
+  $animationType           = linear, ease(default), ease-in, ease-out, ease-in-out, etc.
+  $animationDelay          = Time after which animation occurs. E.g. 1s, 2s, 3s, etc.
+  $animationIterationCount = How many times should animation occur. E.g. 1, 2, 3, infinite, etc.
+  $animationDirection      = In which direction should animation occur. E.g. reverse, alternate. If not specified, forward operation takes place.
+=animateIt($animationName, $animationDuration, $animationType:null, $animationDelay:null, $animationIterationCount:null, $animationDirection:null)
+  -webkit-animation : $animationName $animationDuration $animationType $animationDelay $animationIterationCount $animationDirection
+  animation : $animationName $animationDuration $animationType $animationDelay $animationIterationCount $animationDirection
+
+=animationKeyframe($animationName)
+  @if $animationName == bounce
+    $top1 : -200px
+    $top2 : 20px
+    $top3 : -10px
+    $top4 : 0px
+
+    @-webkit-keyframes bounce
+      0%
+        left : 0
+        top : $top1
+      50%
+        left : 0
+        top : $top2
+      75%
+        left : 0
+        top : $top3
+      100%
+        left : 0
+        top : $top4
+
+    @-moz-keyframes bounce
+      0%
+        left : 0
+        top : $top1
+      50%
+        left : 0
+        top : $top2
+      75%
+        left : 0
+        top : $top3
+      100%
+        left : 0
+        top : $top4
+
+    @-ms-keyframes bounce
+      0%
+        left : 0
+        top : $top1
+      50%
+        left : 0
+        top : $top2
+      75%
+        left : 0
+        top : $top3
+      100%
+        left : 0
+        top : $top4
+
+    @-o-keyframes bounce
+      0%
+        left : 0
+        top : $top1
+      50%
+        left : 0
+        top : $top2
+      75%
+        left : 0
+        top : $top3
+      100%
+        left : 0
+        top : $top4
+
+    @keyframes bounce
+      0%
+        left : 0
+        top : $top1
+      50%
+        left : 0
+        top : $top2
+      75%
+        left : 0
+        top : $top3
+      100%
+        left : 0
+        top : $top4
+
+  @if $animationName == fadeIn
+    $opacity0 : 0
+    $opacity1 : 1
+
+    @-webkit-keyframes fadeIn
+      0%
+        opacity : $opacity0
+      100%
+        opacity : $opacity1
+    @-moz-keyframes fadeIn
+      0%
+        opacity : $opacity0
+      100%
+        opacity : $opacity1
+    @-ms-keyframes fadeIn
+      0%
+        opacity : $opacity0
+      100%
+        opacity : $opacity1
+    @-o-keyframes fadeIn
+      0%
+        opacity : $opacity0
+      100%
+        opacity : $opacity1
+    @keyframes fadeIn
+      0%
+        opacity : $opacity0
+      100%
+        opacity : $opacity1
+
+// new
+=transformStyle($style)
+  -webkit-transform-style : $style
+  transform-style : $style
+
+// new
+=backFaceVisibility($value)
+  -webkit-backface-visibility : $value
+  -moz-backface-visibility : $value
+  backface-visibility : $value
+
+=translate($valueX,$valueY)
+  -webkit-transform : translate($valueX, $valueY)
+  -moz-transform : translate($valueX, $valueY)
+  -ms-transform : translate($valueX, $valueY)
+  -o-transform : translate($valueX, $valueY)
+  transform : translate($valueX, $valueY)
+
+=rotate($angle, $direction:null)
+  @if $direction == y
+    -webkit-transform : rotateY($angle)
+    -moz-transform : rotateY($angle)
+    -ms-transform : rotateY($angle)
+    -o-transform : rotateY($angle)
+    transform : rotateY($angle)
+  @else if $direction == x
+    -webkit-transform : rotateX($angle)
+    -moz-transform : rotateX($angle)
+    -ms-transform : rotateX($angle)
+    -o-transform : rotateX($angle)
+    transform : rotateX($angle)
+  @else
+    -webkit-transform : rotate($angle)
+    -moz-transform : rotate($angle)
+    -ms-transform : rotate($angle)
+    -o-transform : rotate($angle)
+    transform : rotate($angle)
+
+=scale($valueX, $valueY)
+  -webkit-transform : scale($valueX, $valueY)
+  -moz-transform : scale($valueX, $valueY)
+  -ms-transform : scale($valueX, $valueY)
+  -o-transform : scale($valueX, $valueY)
+  transform : scale($valueX, $valueY)
+
+=skew($angleX, $angleY)
+  -webkit-transform : skew($angleX, $angleY)
+  -moz-transform : skew($angleX, $angleY)
+  -ms-transform : skew($angleX, $angleY)
+  -o-transform : skew($angleX, $angleY)
+  transform : skew($angleX, $angleY)
+
+=borderRadius($borderRadius)
+  -webkit-border-radius : $borderRadius
+  -moz-border-radius : $borderRadius
+  border-radius : $borderRadius
+
+=transition($property, $transitionTime, $transitionType:null, $delay:null)
+  -webkit-transition : $property $transitionTime $transitionType $delay
+  -moz-transition : $property $transitionTime $transitionType $delay
+  -o-transition : $property $transitionTime $transitionType $delay
+  transition : $property $transitionTime $transitionType $delay
+
+=boxShadow($valueX,$valueY,$blur,$spread,$shadowColor,$inset:null)
+  -webkit-box-shadow : $valueX $valueY $blur $spread $shadowColor $inset
+  -moz-box-shadow : $valueX $valueY $blur $spread $shadowColor $inset
+  -o-box-shadow : $valueX $valueY $blur $spread $shadowColor $inset
+  box-shadow : $valueX $valueY $blur $spread $shadowColor $inset
+
+=backgroundGradient($gradientColor1,$gradientColor2)
+  background : $gradientColor1
+  background : -webkit-linear-gradient(top, $gradientColor1, $gradientColor2)
+  background : -moz-linear-gradient(top, $gradientColor1, $gradientColor2)
+  background : -ms-linear-gradient(top, $gradientColor1, $gradientColor2)
+  background : -o-linear-gradient(top, $gradientColor1, $gradientColor2)
+  background : linear-gradient(to bottom, $gradientColor1, $gradientColor2)
+

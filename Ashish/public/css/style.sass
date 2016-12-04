@@ -1,0 +1,211 @@
+@import "variables"
+@import "mixins"
+@import "placeholders"
+
+.noPadding
+  padding : 0
+
+.fullHeight
+  height : 100%
+
+.responseMessage
+  color : green
+
+body, html
+  height : 100%
+  margin : 0
+  padding : 0
+
+.myContainer
+  position : relative
+  min-height : 100%
+
+// ---------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------- Navigation
+// ---------------------------------------------------------------------------------------------------------------------
+#navigation
+  width : 100%
+  height : 40px
+  background : $blue-light
+  margin-bottom : 10px
+  +boxShadow(0, 2px, 3px, 0, $shadowColor)
+  ul
+    margin : 0
+    padding : 0
+    list-style-type : none
+    li
+      a
+        text-decoration : none
+        display : block
+        float : left
+        padding : 0 20px
+        line-height : 40px
+        font-size : 20px
+        color : #FFFFFF
+        &:hover
+          background : $blue-dark
+
+.content
+  padding-bottom : 40px
+  clear : both
+
+// ---------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------- Footer
+// ---------------------------------------------------------------------------------------------------------------------
+#footer
+  position : absolute
+  left : 0
+  bottom : 0
+  width : 100%
+  height : 40px
+  line-height : 40px
+  font-size : 14px
+  text-align : center
+  background : #000000
+  color : #FFFFFF
+  p
+    margin : 0
+    padding : 0
+
+.active
+  background : $blue-dark/1.2
+
+// ---------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------- Left side contents
+// ---------------------------------------------------------------------------------------------------------------------
+.contentLeft
+  .coverPic
+    width : 100%
+    border : 4px solid white
+    @extend %boxShadow
+    margin-bottom : 20px
+
+  .homePost
+    clear : both
+    margin-bottom : 10px
+    background : $facebookColor
+    padding : 10px
+    @extend %boxShadow
+    .imageThumbnail
+      width : 150px
+      height : 150px
+      float : left
+      margin-right : 10px
+      overflow : hidden
+      border : 4px solid white
+      @extend %boxShadow
+      img
+        width : 100%
+        +scale(2,2)
+
+    .homePostContent
+      h3
+        margin : 0
+        a
+          color : green
+          font-family : "Times New Roman", serif
+          text-decoration : none
+          &:hover
+            color : $blue-dark
+      p
+        margin : 0
+        text-align : justify
+    .homePostFooter
+      font-size : 20px
+      p
+        float : left
+        font-family : "Times New Roman", serif
+        margin : 0
+      div
+        float : right
+        a
+          color : $blue-dark
+          &:hover
+            color : $blue-light
+
+// ---------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------- Right side contents
+// ---------------------------------------------------------------------------------------------------------------------
+.contentRight
+  background : #FFFFFF
+  padding : 5px
+  height : 500px
+  @extend %boxShadow
+
+// ---------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------- Non dynamic content
+// ---------------------------------------------------------------------------------------------------------------------
+$titleBorderLeftColor : #A0A0A0
+$titleBackgroundColor : #E0E0E0
+.completePageLeft
+  margin-bottom : 20px
+  .pagePost
+    clear : both
+    background : $titleBackgroundColor*1.07
+
+    .pagePostHeader
+      margin-bottom : 10px
+      h2
+        margin : 0
+        padding : 10px 15px
+        font-weight : bold
+        border-left : 3px solid $titleBorderLeftColor
+        background : $titleBackgroundColor
+        a
+          text-decoration : none
+          color : black
+          font-family : "Times New Roman", serif
+          &:hover
+            color : green
+
+    .pagePostContent
+      margin-bottom : 10px
+      padding : 0 15px
+      .pagePostContentImage
+        // padding: 5px
+        background : $facebookColor
+        // width: 40%
+        margin-bottom : 20px
+        cursor : pointer
+        // +boxShadow(0,0,0,1px,$shadowColor)
+        +transition(box-shadow, 0.6s)
+        &:hover
+          +boxShadow(0, 0, 10px, 1px, rgba(0, 0, 0, 0.3))
+        img
+          width : 100%
+          border : 3px solid white
+          +boxShadow(0, 0, 0, 1px, $shadowColor)
+        p.pagePostContentImageLabel
+          text-align : center
+          font-weight : bold
+          margin-bottom : 0
+          padding : 10px
+          +boxShadow(0, 0, 0, 1px, $shadowColor)
+      p.pagePostContentParagraph
+        // margin-bottom: 0
+        clear : both
+        text-align : justify
+        //text-indent : 15%
+
+    .pagePostFooter
+      font-size : 25px
+      line-height : 50px
+      padding : 0 15px
+      font-weight : bold
+      border-left : 3px solid $titleBorderLeftColor
+      background : $titleBackgroundColor
+      height : 50px
+      .pagePostFooterLabel
+        float : left
+        font-family : "Times New Roman", serif
+        margin-bottom : 0
+      .pagePostFooterLinks
+        float : right
+        a
+          color : $blue-dark
+          margin-left : 5px
+          &:hover
+            color : $blue-light
+
+
+

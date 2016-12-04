@@ -1,0 +1,184 @@
+@import "variables"
+@import "mixins"
+@import "placeholders"
+@import "login"
+@import "admin"
+
+.noPadding
+  padding : 0
+
+.fullHeight
+  height : 100%
+
+.responseMessage
+  color : green
+
+.deleteMessage
+  color : red
+  border : 2px solid red
+
+.editMessage
+  color : green
+  border : 2px solid green
+
+.tempMessage
+  color : $blue-dark
+  border : 2px solid $blue-light
+
+.deleteMessage, .editMessage, .tempMessage
+  padding : 10px 5px
+  text-align : center
+  font-size : 12px
+  margin-bottom : 10px
+
+body, html
+  height : 100%
+  margin : 0
+  padding : 0
+
+.myContainer
+  position : relative
+  min-height : 100%
+
+#navigation
+  width : 100%
+  height : 40px
+  background : $blue-light
+  margin-bottom : 10px
+  ul
+    margin : 0
+    padding : 0
+    list-style-type : none
+    li
+      a
+        text-decoration : none
+        display : block
+        float : left
+        padding : 0 20px
+        line-height : 40px
+        font-size : 20px
+        color : #FFFFFF
+        &:hover
+          background : $blue-dark
+
+.content
+  padding-bottom : 40px
+
+#footer
+  position : absolute
+  left : 0
+  bottom : 0
+  width : 100%
+  height : 40px
+  line-height : 40px
+  font-size : 14px
+  text-align : center
+  background : #000000
+  color : #FFFFFF
+  p
+    margin : 0
+    padding : 0
+
+.active
+  background : #DDDDDD
+
+.displayPagesForAdmin
+  text-align : center
+  ul
+    border : 2px solid limegreen
+    width : 200px
+    height : 350px
+    overflow : hidden
+    list-style-type : none
+    margin : 5px
+    padding : 5px
+    display : inline-block
+    li
+      //display : inline
+      text-align : justify
+      a
+        text-decoration : none
+        padding : 5px 0
+        display : block
+      img
+        width : 186px
+        height : 186px
+
+      &:first-child
+        text-align : center
+        a
+          background : darkred
+          color : #FFFFFF
+          &:hover
+            background : red
+            color : #000000
+    .public_page_from_admin_page:hover
+      text-decoration : underline
+
+p.toggle-popup
+  background : #AAAA00
+  color : #FFFFFF
+  cursor : pointer
+  display : inline
+  padding : 20px
+  &:hover
+    background : yellow
+    color : #000000
+
+.pop-up-container
+  display : none
+  width : 100%
+  height : 100%
+  background : rgba(0, 0, 0, 0.9)
+  position : fixed
+  top : 0
+  left : 0
+  .pup-up
+    background : #FFFFFF
+    width : 400px
+    //height : 400px
+    margin : 0 auto
+    position : relative
+    top : 50%
+    +borderRadius(7px)
+    +translate(0, -50%)
+    .content
+      width : 100%
+      height : 100%
+      padding : 20px
+      box-sizing : border-box
+      text-align : center
+      p
+        font-size : 40px
+        margin-bottom : 10px
+        margin-top : 0
+        padding : 0
+        color : gray
+        &:first-of-type
+          font-weight : bold
+        &:last-of-type
+          font-size : 30px
+          margin-bottom : 30px
+      button
+        margin : 10px 5% 0
+        padding : 20px
+        width : 30%
+        border : 0
+        cursor : pointer
+        +borderRadius(5px)
+      .cancel-user, .cancel-page
+        color : #FFFFFF
+        background : #007700
+        &:hover
+          background : #00AA00
+      .delete-user, .delete-page
+        color : #FFFFFF
+        background : #770000
+        &:hover
+          background : #AA0000
+
+.dropDownWithSearchContainer
+  padding : 2%
+  .dropDownWithSearch, .goToZoo
+    width : 100%
+
