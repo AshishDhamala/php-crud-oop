@@ -11,7 +11,9 @@ Before running this porject on your browser, you need to do these things:
 
 ## Admin section
 To access admin section. Go to the admin url and type these email and password:
+
 email: aashish201030@gmail.com or ashish.dhamala2015@gmail.com
+
 password: blueocean
 
 After login, you can access the admin page.
